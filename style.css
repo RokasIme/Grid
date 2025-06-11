@@ -11,12 +11,13 @@ body {
 }
 
 .container > * {
-  border: 2px solid gold;
+  /* border: 2px solid gold; */
   padding: 2rem;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #444;
 }
 
 .container {
@@ -26,7 +27,7 @@ body {
   justify-content: center;
   align-content: center;
   grid-template-rows: 100px repeat(5, 300px) 150px;
-  gap: 20px;
+  column-gap: 20px;
   margin: 20px;
 
   grid-template-areas:
@@ -84,4 +85,46 @@ header {
 }
 footer {
   grid-area: footer;
+}
+
+/* PATHS */
+
+header {
+  clip-path: polygon(0 0, 100% 0, 100% 80px, 50% 100%, 0 80px);
+  animation: moveDown 2s ease-in-out;
+}
+
+.hero {
+  clip-path: polygon(0 0, 50% 20px, 100% 0, 100% 280px, 0 100%);
+}
+
+.s1 {
+  clip-path: polygon(0 20px, 100% 13px, 100% 100%, 0 100%);
+}
+
+.s2 {
+  clip-path: polygon(0 13px, 100% 0, 100% 100%, 0 100%);
+}
+
+.promo,
+footer,
+.s3,
+.s4,
+.s5,
+.s6 {
+  margin-top: 20px;
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
